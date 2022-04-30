@@ -13,12 +13,12 @@ public class Index
       Boolean naoAchouSaida = true;
 
 			System.out.println();
-			System.out.println("Qual seria seu nome, aventureiro ?");
+			System.out.println("What would your name be, adventurer ?");
 			System.out.print("> ");			
       nome = Teclado.getUmString();
 			
       System.out.println();
-      System.out.println("Digite o nome do arquivo .txt para carregar o mapa:");
+      System.out.println("Enter the name of the .txt file to load the map:");
       System.out.print("> ");
       mapa = Teclado.getUmString();
 
@@ -27,7 +27,7 @@ public class Index
       atual = leitorDeMapa.getCoordenada();
       saidaCoordenada = leitorDeMapa.getSaida();
 
-      System.out.println("Esse e o mapa: ");
+      System.out.println("That's the map: ");
       System.out.println();
       System.out.print(leitorDeMapa.toString());
       System.out.println();
@@ -48,7 +48,7 @@ public class Index
 						}
 						catch(Exception erro)
 						{
-							System.out.println("Este labirinto nao tem caminho para a saida.");
+							System.out.println("There's no exit in the maze");
 							System.exit(0);
 						}
 										
@@ -74,6 +74,6 @@ public class Index
 				}
 			}
 		
-			System.out.println("Parabens " + nome + " voce saiu do labirinto!");
+			System.out.println("Congratulation " + nome + ", you find the maze's exit");
     }
 }

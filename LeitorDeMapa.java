@@ -28,11 +28,11 @@ public class LeitorDeMapa implements Cloneable
 		try
 		{
 			String currentPath = new java.io.File(".").getCanonicalPath();
-			file = new BufferedReader(new FileReader(currentPath + "\\mapas\\" + this.mapa));
+			file = new BufferedReader(new FileReader(currentPath + "\\maps\\" + this.mapa));
 		}
 		catch(Exception erro)
 		{
-			System.err.println("Arquivo de labirinto nao encontrado");
+			System.err.println("Maze file not found");
 			System.exit(0);
 		}		
 			
@@ -77,7 +77,7 @@ public class LeitorDeMapa implements Cloneable
 				{
 					if(linhaString.charAt(coluna) == ' ')
 					{
-						System.out.println("Esse esta labirinto sem parede.");
+						System.out.println("There a hole on the maze's wall.");
 						System.exit(0);
 					}
 				}
@@ -86,7 +86,7 @@ public class LeitorDeMapa implements Cloneable
 				{					
 					if(linhaString.charAt(coluna) == ' ')
 					{
-						System.out.println("Esse esta labirinto sem parede.");
+						System.out.println("There a hole on the maze's wall.");
 						System.exit(0);
 					}
 				}
@@ -95,19 +95,19 @@ public class LeitorDeMapa implements Cloneable
 		
 		if(temEntrada == false)
 		{
-			System.out.println("Este labirinto nao tem entrada.");
+			System.out.println("There's no entrace on the maze.");
 			System.exit(0);
 		}
 		
 		if(temSaida == false)
 		{
-			System.out.println("Este labirinto nao tem saida.");
+			System.out.println("There's no exit on the maze.");
 			System.exit(0);
 		}
 		
 		if(entradaQtd > 1 || saidaQtd > 1)
 		{
-			System.out.println("Este labirinto tem mais de uma entrada ou saida.");
+			System.out.println("There's more than one entrace or exit on the maze.");
 			System.exit(0);
 		}
 	}

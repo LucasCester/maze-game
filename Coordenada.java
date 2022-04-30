@@ -28,8 +28,7 @@ public class Coordenada implements Cloneable
 	@Override
 	public String toString()
 	{
-	
-		return("Coordenada: " + linha + ", " + coluna);
+	    return("Coordenada: " + linha + ", " + coluna);
 	}
 	
 	@Override
