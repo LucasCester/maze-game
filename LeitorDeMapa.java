@@ -27,7 +27,8 @@ public class LeitorDeMapa implements Cloneable
 	{			
 		try
 		{
-			file = new BufferedReader(new FileReader(this.mapa));			
+			String currentPath = new java.io.File(".").getCanonicalPath();
+			file = new BufferedReader(new FileReader(currentPath + "\\mapas\\" + this.mapa));
 		}
 		catch(Exception erro)
 		{
@@ -109,8 +110,6 @@ public class LeitorDeMapa implements Cloneable
 			System.out.println("Este labirinto tem mais de uma entrada ou saida.");
 			System.exit(0);
 		}
-		
-		
 	}
 	
 	public Coordenada getCoordenada()
@@ -200,8 +199,7 @@ public class LeitorDeMapa implements Cloneable
 		if(this.saidaQtd != ((LeitorDeMapa)obj).saidaQtd)
 			return false;
 
-        return true;
-        
+      return true;
     }	
 	
 	@Override
@@ -259,19 +257,19 @@ public class LeitorDeMapa implements Cloneable
     
     public LeitorDeMapa(LeitorDeMapa l) throws Exception
     {	
-        if(l == null)
-            throw new Exception("modelo ausente");
+			if(l == null)
+					throw new Exception("modelo ausente");
 
-        this.mapa = l.mapa;
-        this.labirinto = l.labirinto;
-        this.linhas = l.linhas;
-        this.colunas = l.colunas;
-        this.linhaString = l.linhaString;
-        this.labirintoDesenhado = l.labirintoDesenhado;
-        this.temEntrada = l.temEntrada;
-        this.temSaida = l.temSaida;
-        this.file = l.file;
-        this.entradaQtd = l.entradaQtd;
-        this.saidaQtd = l.saidaQtd;
+			this.mapa = l.mapa;
+			this.labirinto = l.labirinto;
+			this.linhas = l.linhas;
+			this.colunas = l.colunas;
+			this.linhaString = l.linhaString;
+			this.labirintoDesenhado = l.labirintoDesenhado;
+			this.temEntrada = l.temEntrada;
+			this.temSaida = l.temSaida;
+			this.file = l.file;
+			this.entradaQtd = l.entradaQtd;
+			this.saidaQtd = l.saidaQtd;
     }   
 }

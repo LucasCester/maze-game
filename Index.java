@@ -1,8 +1,7 @@
 public class Index 
 {	
     public static void main(String[] args) throws Exception 
-    {        
-      Teclado teclado = new Teclado();
+    {
       SaidaCoordenada saidaCoordenada;
       Pilha<Coordenada> caminho = new Pilha<Coordenada>();
       Pilha<Fila<Coordenada>> possibilidades = new Pilha<Fila<Coordenada>>();
@@ -15,16 +14,19 @@ public class Index
 
 			System.out.println();
 			System.out.println("Qual seria seu nome, aventureiro ?");
-			System.out.print("> ");
-      nome = teclado.getUmString();
+			System.out.print("> ");			
+      nome = Teclado.getUmString();
+			
       System.out.println();
       System.out.println("Digite o nome do arquivo .txt para carregar o mapa:");
       System.out.print("> ");
-      mapa = teclado.getUmString();
+      mapa = Teclado.getUmString();
+
       System.out.println();
       leitorDeMapa = new LeitorDeMapa(mapa);
       atual = leitorDeMapa.getCoordenada();
       saidaCoordenada = leitorDeMapa.getSaida();
+
       System.out.println("Esse e o mapa: ");
       System.out.println();
       System.out.print(leitorDeMapa.toString());
@@ -37,7 +39,7 @@ public class Index
 				fila = indentificadorDeCaminho.getCaminhoLivre();
 			
 				if(fila.isVazia())
-				{				
+				{
 					while(fila.isVazia())
 					{
 						try
